@@ -4,17 +4,21 @@
   const mobileNav = document.querySelector(".nav-mobile");
   const navLinks = document.querySelectorAll(".site-nav a");
   const sections = [...document.querySelectorAll("main section[id]")];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   document.body.classList.add("js-ready");
 
-  const setHeader = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-  };
+  if (header) {
+    const setHeader = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
 
-  setHeader();
-  window.addEventListener("scroll", setHeader, { passive: true });
+    setHeader();
+    window.addEventListener("scroll", setHeader, { passive: true });
+  }
 
   const setMenuOpen = (open) => {
+    if (!toggle || !mobileNav) return;
     toggle.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -25,17 +29,19 @@
 
   const closeMenu = () => setMenuOpen(false);
 
-  toggle.addEventListener("click", () => {
-    setMenuOpen(!toggle.classList.contains("is-open"));
-  });
+  if (toggle && mobileNav) {
+    toggle.addEventListener("click", () => {
+      setMenuOpen(!toggle.classList.contains("is-open"));
+    });
 
-  mobileNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
 
   const navMap = {
     home: "home",
@@ -62,8 +68,10 @@
     });
   };
 
-  activateNav();
-  window.addEventListener("scroll", activateNav, { passive: true });
+  if (sections.length) {
+    activateNav();
+    window.addEventListener("scroll", activateNav, { passive: true });
+  }
 
   document.querySelectorAll(".faq-btn").forEach((button) => {
     button.addEventListener("click", () => {
@@ -91,8 +99,13 @@
         }
       });
     },
-    { threshold: 0.14 }
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
   );
 
-  document.querySelectorAll(".reveal-on-scroll").forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal-on-scroll").forEach((el, index) => {
+    if (!reduceMotion) {
+      el.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
+    }
+    observer.observe(el);
+  });
 })();

@@ -7,20 +7,27 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#070709">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/brand/app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <main class="hero" style="min-height:100vh;">
-    <div class="container" style="text-align:center;max-width:640px;">
-      <a class="logo" href="./" style="justify-content:center;margin-bottom:28px;">
+<body class="error-page">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="error-bg" aria-hidden="true">
+    <img class="hero-photo" src="assets/images/pages/page-404.jpg" alt="" width="1920" height="1080">
+    <div class="hero-veil error-veil"></div>
+  </div>
+  <main class="error-main">
+    <div class="container error-card">
+      <a class="logo" href="./" style="justify-content:center;margin-bottom:20px;">
         <span class="logo-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg>
         </span>
         Pokiflix
       </a>
+      <p class="error-code">404</p>
       <h1>This page is unavailable</h1>
       <p class="hero-copy" style="margin-inline:auto;">The page you requested does not exist. Return to the Pokiflix homepage to continue.</p>
       <a class="btn btn-primary" href="./">Back to homepage</a>

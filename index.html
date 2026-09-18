@@ -9,15 +9,21 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://pokiflix.space/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pokiflix.space/">
   <meta property="og:title" content="Pokiflix | Cinematic Entertainment Experience">
   <meta property="og:description" content="A streamlined entertainment interface built for speed, clarity, and a cinematic viewing environment.">
+  <meta property="og:image" content="https://pokiflix.space/assets/images/social/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Pokiflix">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pokiflix | Cinematic Entertainment Experience">
   <meta name="twitter:description" content="A streamlined entertainment interface built for speed, clarity, and a cinematic viewing environment.">
+  <meta name="twitter:image" content="https://pokiflix.space/assets/images/social/og-cover.jpg">
+  <link rel="preload" as="image" href="assets/images/hero/hero-bg.jpg">
+  <link rel="preload" as="image" href="assets/images/hero/featured-tonight.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -53,7 +59,7 @@
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#faq">FAQ</a>
-        <a href="#privacy">Privacy</a>
+        <a href="privacy-policy.html">Privacy</a>
       </nav>
 
       <div class="header-actions">
@@ -72,13 +78,15 @@
     <a href="#features">Features</a>
     <a href="#discover">Discover</a>
     <a href="#faq">FAQ</a>
-    <a href="#privacy">Privacy</a>
+    <a href="privacy-policy.html">Privacy</a>
     <a href="#terms">Terms</a>
   </nav>
 
   <main>
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true">
+        <img class="hero-photo" src="assets/images/hero/hero-bg.jpg" alt="" width="1920" height="1080">
+        <div class="hero-veil"></div>
         <div class="orb orb-a"></div>
         <div class="orb orb-b"></div>
         <div class="grid-fade"></div>
@@ -115,16 +123,29 @@
           </div>
           <div class="screen">
             <div class="screen-hero">
+              <img class="screen-hero-img" src="assets/images/hero/featured-tonight.jpg" alt="" width="1280" height="720">
               <div class="play-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg>
               </div>
               <h3>Featured tonight</h3>
             </div>
             <div class="tiles">
-              <div class="tile"><span>Drama</span></div>
-              <div class="tile"><span>Sci-Fi</span></div>
-              <div class="tile"><span>Series</span></div>
-              <div class="tile"><span>Docs</span></div>
+              <div class="tile">
+                <img src="assets/images/tiles/tile-drama.jpg" alt="" width="768" height="1152">
+                <span>Drama</span>
+              </div>
+              <div class="tile">
+                <img src="assets/images/tiles/tile-scifi.jpg" alt="" width="768" height="1152">
+                <span>Sci-Fi</span>
+              </div>
+              <div class="tile">
+                <img src="assets/images/tiles/tile-series.jpg" alt="" width="768" height="1152">
+                <span>Series</span>
+              </div>
+              <div class="tile">
+                <img src="assets/images/tiles/tile-docs.jpg" alt="" width="768" height="1152">
+                <span>Docs</span>
+              </div>
             </div>
           </div>
           <div class="float-chip">
@@ -137,6 +158,23 @@
         </div>
       </div>
     </section>
+
+    <div class="poster-rail" aria-hidden="true">
+      <div class="poster-track">
+        <img class="poster-card" src="assets/images/posters/poster-01.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-02.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-03.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-04.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-05.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-06.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-01.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-02.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-03.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-04.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-05.jpg" alt="" width="400" height="600">
+        <img class="poster-card" src="assets/images/posters/poster-06.jpg" alt="" width="400" height="600">
+      </div>
+    </div>
 
     <div class="strip">
       <div class="container strip-row">
@@ -151,17 +189,20 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="about-panel reveal-on-scroll" aria-hidden="true">
-          <div class="about-card">
-            <h3>Designed for watching</h3>
-            <p>Large type, high contrast, and a darkened stage so the content stays in front.</p>
-          </div>
-          <div class="about-card">
-            <h3>Built for scanning</h3>
-            <p>Categories, short descriptions, and a simple path from browse to play.</p>
-          </div>
-          <div class="about-card">
-            <h3>Made to stay out of the way</h3>
-            <p>No crowded menus. Just the controls you need, when you need them.</p>
+          <img class="about-photo" src="assets/images/about/about-stage.jpg" alt="" width="1080" height="1350">
+          <div class="about-cards">
+            <div class="about-card">
+              <h3>Designed for watching</h3>
+              <p>Large type, high contrast, and a darkened stage so the content stays in front.</p>
+            </div>
+            <div class="about-card">
+              <h3>Built for scanning</h3>
+              <p>Categories, short descriptions, and a simple path from browse to play.</p>
+            </div>
+            <div class="about-card">
+              <h3>Made to stay out of the way</h3>
+              <p>No crowded menus. Just the controls you need, when you need them.</p>
+            </div>
           </div>
         </div>
         <div class="about-copy reveal-on-scroll">
@@ -204,16 +245,25 @@
         </div>
         <div class="steps">
           <article class="step reveal-on-scroll">
+            <div class="step-visual">
+              <img src="assets/images/how/step-01-open.jpg" alt="" width="1024" height="1024" loading="lazy">
+            </div>
             <div class="step-num">01</div>
             <h3>Open the experience</h3>
             <p>Start on a dark, full-screen canvas. The homepage highlights what matters now and keeps secondary options in the background.</p>
           </article>
           <article class="step reveal-on-scroll">
+            <div class="step-visual">
+              <img src="assets/images/how/step-02-browse.jpg" alt="" width="1024" height="1024" loading="lazy">
+            </div>
             <div class="step-num">02</div>
             <h3>Browse by type</h3>
             <p>Move through films, series, animation, and documentaries. Each collection is labeled clearly so scanning stays effortless.</p>
           </article>
           <article class="step reveal-on-scroll">
+            <div class="step-visual">
+              <img src="assets/images/how/step-03-watch.jpg" alt="" width="1024" height="1024" loading="lazy">
+            </div>
             <div class="step-num">03</div>
             <h3>Watch with focus</h3>
             <p>The player view reduces chrome, keeps controls close, and preserves a cinematic look on phones, tablets, and desktops.</p>
@@ -285,20 +335,32 @@
         </div>
         <div class="cat-grid">
           <article class="cat cat-1 reveal-on-scroll">
-            <h3>Films</h3>
-            <p>Feature-length stories presented with a cinematic, poster-first layout.</p>
+            <img class="cat-photo" src="assets/images/discover/cat-films.jpg" alt="" width="1200" height="800" loading="lazy">
+            <div class="cat-copy">
+              <h3>Films</h3>
+              <p>Feature-length stories presented with a cinematic, poster-first layout.</p>
+            </div>
           </article>
           <article class="cat cat-2 reveal-on-scroll">
-            <h3>Series</h3>
-            <p>Episode-based shows grouped for quick season and title scanning.</p>
+            <img class="cat-photo" src="assets/images/discover/cat-series.jpg" alt="" width="1200" height="800" loading="lazy">
+            <div class="cat-copy">
+              <h3>Series</h3>
+              <p>Episode-based shows grouped for quick season and title scanning.</p>
+            </div>
           </article>
           <article class="cat cat-3 reveal-on-scroll">
-            <h3>Animation</h3>
-            <p>Animated titles in a dedicated lane with the same dark, focused UI.</p>
+            <img class="cat-photo" src="assets/images/discover/cat-animation.jpg" alt="" width="1200" height="800" loading="lazy">
+            <div class="cat-copy">
+              <h3>Animation</h3>
+              <p>Animated titles in a dedicated lane with the same dark, focused UI.</p>
+            </div>
           </article>
           <article class="cat cat-4 reveal-on-scroll">
-            <h3>Documentaries</h3>
-            <p>Non-fiction stories surfaced with clear labels and concise summaries.</p>
+            <img class="cat-photo" src="assets/images/discover/cat-documentaries.jpg" alt="" width="1200" height="800" loading="lazy">
+            <div class="cat-copy">
+              <h3>Documentaries</h3>
+              <p>Non-fiction stories surfaced with clear labels and concise summaries.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -361,6 +423,17 @@
       </div>
     </section>
 
+    <section class="cinema-cta reveal-on-scroll" aria-labelledby="cta-title">
+      <img class="cinema-cta-photo" src="assets/images/hero/featured-tonight.jpg" alt="" width="1280" height="720" loading="lazy">
+      <div class="cinema-cta-veil"></div>
+      <div class="container cinema-cta-inner">
+        <div class="section-kicker">Now playing</div>
+        <h2 class="section-title" id="cta-title">A darker stage. A clearer story.</h2>
+        <p class="section-lead">Pokiflix keeps the lights low so the next title stays in front — on phones, tablets, and desktops.</p>
+        <a class="btn btn-primary" href="#discover">Browse categories</a>
+      </div>
+    </section>
+
     <section class="section" id="privacy" style="background: var(--bg-2);">
       <div class="container">
         <div class="section-head reveal-on-scroll">
@@ -386,6 +459,7 @@
             <p>This website does not publish personal names, photos, phone numbers, residential addresses, or private messages.</p>
             <h3>Contact</h3>
             <p>Privacy questions can be sent to <a href="mailto:support@pokiflix.space">support@pokiflix.space</a>.</p>
+            <p><a href="privacy-policy.html">Read the full Privacy Policy</a>.</p>
           </article>
 
           <article class="legal-card reveal-on-scroll" id="terms">
@@ -433,7 +507,7 @@
         <div class="footer-col">
           <h4>Policies</h4>
           <a href="#faq">FAQ</a>
-          <a href="#privacy">Privacy Policy</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
           <a href="#terms">Terms of Use</a>
         </div>
         <div class="footer-col">
